@@ -288,6 +288,67 @@
       gap: 4px;
     }
 
+    /* ── PRIVACY ── */
+    .privacy-block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .privacy-lead p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      line-height: 1.65;
+    }
+
+    .privacy-items {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .privacy-item {
+      display: flex;
+      gap: 16px;
+      padding: 18px 20px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-item:last-child { border-bottom: none; }
+
+    .privacy-icon {
+      font-size: 1.1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .privacy-item > div { min-width: 0; }
+
+    .privacy-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      margin-bottom: 4px;
+    }
+
+    .privacy-item p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .privacy-footer-note {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       summary::after { transition: none; }
     }
@@ -433,6 +494,71 @@
           <p>Desinstalar o app remove os dados locais do dispositivo. Para remover os dados do iCloud, acesse iCloud.com → Gerenciar armazenamento → Selfmaxxing e exclua. Se precisar de remoção completa e confirmada, entre em contato pelo e-mail de suporte abaixo.</p>
         </div>
       </details>
+
+    </div>
+  </section>
+
+  <section id="privacidade">
+    <p class="section-label">Política de privacidade</p>
+    <div class="privacy-block">
+
+      <div class="privacy-lead">
+        <p>O Selfmaxxing não coleta, armazena nem transmite nenhum dado seu para servidores próprios. Tudo fica no seu dispositivo ou na sua conta pessoal do iCloud.</p>
+      </div>
+
+      <div class="privacy-items">
+
+        <div class="privacy-item">
+          <div class="privacy-icon">📱</div>
+          <div>
+            <strong>Dados locais (SwiftData)</strong>
+            <p>Suas atividades, conquistas e perfil são salvos exclusivamente no armazenamento local do seu iPhone com SwiftData. O Selfmaxxing não tem acesso remoto a esses dados.</p>
+          </div>
+        </div>
+
+        <div class="privacy-item">
+          <div class="privacy-icon">☁️</div>
+          <div>
+            <strong>Sincronização via iCloud</strong>
+            <p>Se você tiver o iCloud ativo, o iOS sincroniza seus dados entre seus próprios dispositivos usando sua conta Apple (CloudKit). Esses dados pertencem a você e ficam nos servidores da Apple, não nos nossos.</p>
+          </div>
+        </div>
+
+        <div class="privacy-item">
+          <div class="privacy-icon">🤖</div>
+          <div>
+            <strong>Geração de desafios com IA</strong>
+            <p>Quando o app gera um desafio com inteligência artificial, usa o Apple Foundation Models — um modelo que roda inteiramente no seu dispositivo, sem enviar nenhum texto para servidores externos.</p>
+          </div>
+        </div>
+
+        <div class="privacy-item">
+          <div class="privacy-icon">📷</div>
+          <div>
+            <strong>Câmera e fotos</strong>
+            <p>As fotos tiradas nas atividades ficam no seu dispositivo. O app acessa a câmera somente quando você está registrando um desafio; nenhuma imagem é enviada para fora do app.</p>
+          </div>
+        </div>
+
+        <div class="privacy-item">
+          <div class="privacy-icon">📡</div>
+          <div>
+            <strong>Sensores de movimento</strong>
+            <p>O acelerômetro é usado exclusivamente para detectar o gesto de sacudir que inicia o sorteio. Nenhum dado de movimento é armazenado ou transmitido.</p>
+          </div>
+        </div>
+
+        <div class="privacy-item">
+          <div class="privacy-icon">🚫</div>
+          <div>
+            <strong>Sem rastreamento ou anúncios</strong>
+            <p>O Selfmaxxing não usa analytics de terceiros, não exibe anúncios e não compartilha nenhuma informação com parceiros ou anunciantes.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="privacy-footer-note">Dúvidas sobre privacidade? Entre em contato pelo e-mail abaixo.</p>
 
     </div>
   </section>
