@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Selfmaxxing – Suporte</title>
+  <meta name="description" content="Suporte e perguntas frequentes do app Selfmaxxing.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap">
+  <style>
+    :root {
+      --bg:         #0F0E0D;
+      --surface:    #1C1A18;
+      --border:     #2C2926;
+      --fg:         #EDE8E1;
+      --muted:      #7A746C;
+      --accent:     #E8703A;
+      --accent-dim: rgba(232, 112, 58, 0.10);
+
+      --font-display: 'Syne', system-ui, sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      padding-left:  max(16px, env(safe-area-inset-left,  0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      padding-block: 0;
+    }
+
+    .wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      padding-block: 56px 80px;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .logo-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { width: 28px; height: 28px; }
+
+    .header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 7vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .header p {
+      color: var(--muted);
+      font-size: 1.0625rem;
+      max-width: 46ch;
+    }
+
+    /* ── SECTIONS ── */
+    section { margin-bottom: 48px; }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 18px 20px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--accent);
+      line-height: 1;
+      flex-shrink: 0;
+      padding-top: 1px;
+      min-width: 24px;
+    }
+
+    .step-body strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      margin-bottom: 2px;
+    }
+
+    .step-body span {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    /* ── CATEGORIES ── */
+    .categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cat-icon {
+      font-size: 1.25rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cat-name {
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .cat-desc {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    details { border-bottom: 1px solid var(--border); }
+    details:last-child { border-bottom: none; }
+
+    summary {
+      padding: 18px 20px;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      list-style: none;
+      color: var(--fg);
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%237A746C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary::after { transform: rotate(180deg); }
+
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .faq-answer p + p { margin-top: 10px; }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card > p {
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    .email-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      flex-wrap: wrap;
+    }
+
+    .email-addr {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: none;
+      border-radius: 7px;
+      padding: 7px 14px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .copy-btn:hover  { background: rgba(232, 112, 58, 0.18); }
+    .copy-btn:active { background: rgba(232, 112, 58, 0.25); }
+
+    .copy-confirm {
+      font-size: 0.8125rem;
+      color: var(--accent);
+      min-height: 1.2em;
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding-block: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      summary::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header class="header">
+    <div class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 4C14 4 8 10 8 16a6 6 0 0012 0c0-6-6-12-6-12z" fill="white" fill-opacity="0.9"/>
+        <path d="M10 20c0 2.2 1.8 4 4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Selfmaxxing</h1>
+      <p>Desafios de fricção mental para sacudir a rotina — suporte e perguntas frequentes.</p>
+    </div>
+  </header>
+
+  <section>
+    <p class="section-label">Como funciona</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Escolha uma categoria</strong>
+          <span>Movimento, Mente, Sentidos ou Conexão — cada uma trabalha um lado diferente de você.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Sacuda o iPhone</strong>
+          <span>Um sorteio haptico entrega o desafio. Continue sacudindo até a vibração de fim — o desafio é revelado.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Execute o desafio</strong>
+          <span>Faça o que foi pedido com presença. Um temporizador registra sua dedicação.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>Registre e conquiste</strong>
+          <span>Tire uma foto, avalie seu humor e receba a conquista do desafio concluído.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Categorias</p>
+    <div class="categories">
+      <div class="cat-card">
+        <div class="cat-icon">🏃</div>
+        <div>
+          <div class="cat-name">Movimento</div>
+          <div class="cat-desc">Corpo em ação</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">🧠</div>
+        <div>
+          <div class="cat-name">Mente</div>
+          <div class="cat-desc">Foco e cognição</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">👁</div>
+        <div>
+          <div class="cat-name">Sentidos</div>
+          <div class="cat-desc">Presença plena</div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-icon">🤝</div>
+        <div>
+          <div class="cat-name">Conexão</div>
+          <div class="cat-desc">Relações reais</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Perguntas frequentes</p>
+    <div class="faq-list">
+
+      <details>
+        <summary>O app não reconhece o movimento de sacudir</summary>
+        <div class="faq-answer">
+          <p>Certifique-se de que o Selfmaxxing tem acesso ao acelerômetro. No iPhone, vá em Ajustes → Privacidade e Segurança → Sensor de Movimento. O app deve aparecer na lista; ative-o se estiver desligado.</p>
+          <p>Se o problema persistir, feche e reabra o app. Um sacudir firme e contínuo — com 10 movimentos — é necessário para disparar o sorteio.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>O app pediu permissão da câmera e travou</summary>
+        <div class="faq-answer">
+          <p>Quando você altera a permissão da câmera nos Ajustes do iOS, o sistema encerra o app automaticamente. O Selfmaxxing salva seu progresso antes de redirecionar para os Ajustes; ao reabrir o app, ele retoma de onde você parou.</p>
+          <p>Se a tela não carregar o estado anterior, feche o app pelo seletor de tarefas e reabra.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Minha atividade não foi salva</summary>
+        <div class="faq-answer">
+          <p>As atividades são salvas localmente com SwiftData e sincronizadas via iCloud (CloudKit). Verifique se o iCloud está ativo para o Selfmaxxing em Ajustes → [seu nome] → iCloud → Mostrar todos.</p>
+          <p>Dados na nuvem podem demorar alguns minutos para sincronizar entre dispositivos.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>O widget não atualiza</summary>
+        <div class="faq-answer">
+          <p>Widgets do iOS atualizam em intervalos controlados pelo sistema. Para forçar uma atualização imediata, remova o widget da tela inicial e adicione novamente. Abrir o app principal também sinaliza ao sistema para atualizar o widget.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>O app do Apple Watch não está sincronizando</summary>
+        <div class="faq-answer">
+          <p>Verifique se o iPhone e o Apple Watch estão pareados e próximos. No Watch app do iPhone, confirme que o Selfmaxxing aparece em "Apps instalados". Reiniciar os dois dispositivos resolve a maioria dos problemas de sincronização.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Não recebo notificações</summary>
+        <div class="faq-answer">
+          <p>Vá em Ajustes → Selfmaxxing → Notificações e confirme que estão ativas. No Focus/Não Perturbe, verifique se o app não está bloqueado. Se "Nenhuma Permissão" aparecer dentro do app, toque no aviso para ir direto às configurações.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Como excluir todos os meus dados</summary>
+        <div class="faq-answer">
+          <p>Desinstalar o app remove os dados locais do dispositivo. Para remover os dados do iCloud, acesse iCloud.com → Gerenciar armazenamento → Selfmaxxing e exclua. Se precisar de remoção completa e confirmada, entre em contato pelo e-mail de suporte abaixo.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Contato e suporte</p>
+    <div class="contact-card">
+      <p>Não achou o que precisava? Envie um e-mail descrevendo o problema, o modelo do iPhone e a versão do iOS. Respondemos em até 2 dias úteis.</p>
+      <div class="email-block">
+        <span class="email-addr" id="email-addr">selfmaxxing18@gmail.com</span>
+        <button class="copy-btn" onclick="copyEmail()" aria-label="Copiar endereço de e-mail">Copiar</button>
+      </div>
+      <div class="copy-confirm" id="copy-confirm" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Selfmaxxing © 2026</span>
+    <span>Feito no Brasil</span>
+  </footer>
+
+</div>
+
+<script>
+  function copyEmail() {
+    var addr = document.getElementById('email-addr').textContent;
+    var confirm = document.getElementById('copy-confirm');
+    navigator.clipboard.writeText(addr).then(function() {
+      confirm.textContent = 'E-mail copiado!';
+      setTimeout(function() { confirm.textContent = ''; }, 2500);
+    }, function() {
+      var sel = window.getSelection();
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById('email-addr'));
+      sel.removeAllRanges();
+      sel.addRange(range);
+      confirm.textContent = 'Selecione e copie o endereço acima.';
+    });
+  }
+</script>
+
+</body>
+</html>
